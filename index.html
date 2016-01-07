@@ -11,6 +11,20 @@
             "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic'} );
         map.addLayer(wms);
         map.zoomToMaxExtent();
+        
+        var dm_wms = new OpenLayers.Layer.WMS(
+          "Canadian Data",
+          "http://www2.dmsolutions.ca/cgi-bin/mswms_gmap",
+          {
+            layers: "bathymetry,land_fn,park,drain_fn,drainage," +
+                "prov_bound,fedlimit,rail,road,popplace",
+            transparent: "true",
+            format: "image/png"
+          },
+          {isBaseLayer: false}
+        );
+        map.addLayer(dm_wms);
+        
       </script>
 
 </body>
