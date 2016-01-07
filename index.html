@@ -9,8 +9,7 @@
         var map = new OpenLayers.Map('map');
         var wms = new OpenLayers.Layer.WMS( "OpenLayers WMS",
             "http://vmap0.tiles.osgeo.org/wms/vmap0", {layers: 'basic'} );
-        map.addLayer(wms);
-        map.zoomToMaxExtent();
+        
         
         var dm_wms = new OpenLayers.Layer.WMS(
           "Canadian Data",
@@ -23,7 +22,8 @@
           },
           {isBaseLayer: false}
         );
-        map.addLayer(dm_wms);
+        map.addLayer(wms, dm_wms);
+        map.zoomToMaxExtent();
         
       </script>
 
