@@ -37,11 +37,11 @@
         );
         
         var wms_sql = new OpenLayers.Layer.WMS(
-          "Somabrasil",
+          "Query layer",
           "http://mapas.cnpm.embrapa.br/geoserver_soma/wms",
           {
             layers: "view_censo",
-            viewpaams: "sql:select * from vw_pam_all_shapes where uf = 'SP' and ano = 2010 and cultura = 'Soja'",
+            viewpaams: `sql:select * from vw_pam_all_shapes where uf = 'SP' and ano = 2010 and cultura = 'Soja'`,
             transparent: "true",
             format: "image/png"
           },
