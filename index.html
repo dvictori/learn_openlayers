@@ -24,7 +24,18 @@
           },
           {isBaseLayer: false}
         );
-        map.addLayers([wms, dm_wms]);
+        
+        var wms_soma = new OpenLayers.Layer.WMS(
+          "Somabrasil",
+          "http://mapas.cnpm.embrapa.br/geoserver_soma/wms",
+          {
+            layers: "municipios"
+          },
+          {isBaseLayer: false}
+        );
+        // canadian data não esta funcionando
+        //map.addLayers([wms, dm_wms, wms_soma]);
+        map.addLayers([wms, wms_soma]);
         map.zoomToMaxExtent();
         
       </script>
