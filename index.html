@@ -36,6 +36,8 @@
           {isBaseLayer: false}
         );
         
+        // coloca o mapa no local errado
+        // tirando da view
         var wms_sql = new OpenLayers.Layer.WMS(
           "Query layer v1.3",
           "http://mapas.cnpm.embrapa.br/geoserver_soma/wms",
@@ -64,7 +66,7 @@
         
         // canadian data não esta funcionando
         //map.addLayers([wms, dm_wms, wms_soma]);
-        map.addLayers([wms, wms_soma, wms_sql, wms_sql2]);
+        map.addLayers([wms, wms_soma, wms_sql2]);
         map.zoomToMaxExtent();
         
       </script>
